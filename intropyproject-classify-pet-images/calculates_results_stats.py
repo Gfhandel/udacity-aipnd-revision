@@ -4,7 +4,7 @@
 #
 # PROGRAMMER: Moses Charles
 # DATE CREATED: 2026-08-26
-# REVISED DATE:
+# REVISED DATE: 2026-08-29
 # PURPOSE: Create a function calculates_results_stats that calculates the
 #          statistics of the results of the programrun using the classifier's model
 #          architecture to classify the images. This function will use the
@@ -92,7 +92,7 @@ def calculates_results_stats(results_dic):
 
         # pet image label is a dog - count number of dog images
         if results_dic[key][3] == 1:
-            n_dogs_img = +1
+            n_dogs_img += 1
 
             # classifier classifies image as Dog - & pet image is a dog
             # count number of correct dog classifications
@@ -105,7 +105,7 @@ def calculates_results_stats(results_dic):
             # and pet image is not a dog
             # count number of correct NOT dog classifications
             if results_dic[key][4] == 0:
-                n_correct_notdogs = +1
+                n_correct_notdogs += 1
 
     # calculate number of total images & not-a-dog image
     n_images = len(results_dic)
